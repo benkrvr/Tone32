@@ -86,6 +86,6 @@ I encourage hobbyists, educators, and developers to:
 
 ## Branding & Attribution
 If you use Tone32 in a project, please credit the original hardware design:  
-“Hardware based on Tone32 https://github.com/benkrvr/Tone32”
+“Hardware based on Tone32 https://github.com/benkrvr/Tone32 ”
 
 Do not use the Tone32 logo or name in any commercial product without permission.
