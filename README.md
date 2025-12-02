@@ -4,59 +4,57 @@ The Universal Music Microcontroller: For pedals, synths, and beyond!
 ---
 
 ## Project Description
-Tone32 is a purpose-built microcontroller platform for all musical applications: from guitar pedals to Eurorack modules, samplers, and MIDI controllers.  
+Tone32 is a purpose-built microcontroller platform for all musical applications: from guitar pedals to synth modules, samplers, and MIDI controllers.
+
 It’s designed to be:
 
 - Reliable and low-latency
-- Audio-first with clean analog paths
-- Expandable for DIY and professional setups
+- Audio-aware with a dedicated ADC/DAC for simple input/output
+- Expandable for DIY experimentation
 - Arduino IDE compatible for easy programming
 
-Whether you’re building effects, synthesizers, or experimental instruments, Tone32 provides the hardware foundation and software framework you need.
+This **v0.1** board provides a solid foundation: a microcontroller with headers and a single dedicated audio input/output, giving you a **taste of musical interactivity** without overcomplicating the design.
 
 ---
 
-## Features
+## Features (v0.1)
 
 ### Core
 - ESP32-S3 dual-core microcontroller
-- Native USB (MIDI, audio, serial)
 - Arduino IDE compatible
+- USB-C for programming and serial interface
 
 ### Audio
-- High-quality stereo I2S codec (24-bit, up to 96kHz)
-- Optional preamp for instrument-level signals
-- Low-noise regulators for clean analog audio
-
-### MIDI & USB
-- 5-pin DIN MIDI in/out
-- USB-MIDI support
+- **Dedicated AUD1 input**: 16-bit ADC for line/CV/instrument signals
+- **Dedicated AUD1 output**: 12–16 bit DAC (via simple I²S codec)
+- Minimal passive components for clean analog path
 
 ### Expansion & UI
-- I²C, SPI, UART headers
-- OLED / LCD support
-- Buttons, encoders, and LEDs for direct control
-- MicroSD slot for samples, presets, and firmware storage
+- General-purpose GPIO header (2×12 pins)
+  - Some pins pre-labeled for I²C, SPI, and ADC/DAC signals
+- Easy connection for buttons, LEDs, or encoders
 
 ### Power
-- 9V pedalboard friendly
-- Reverse polarity protection and low-noise regulation
+- 3.3 V regulated rail from USB or external supply
+- Common ground for audio and peripherals
 
 ### Software / Firmware
-- Built-in DSP utilities: filters, delay, reverb, LFO, envelope followers
-- Ready-to-use examples: pedals, synth modules, MIDI controllers
-- OTA updates and web configuration support
+- Fully Arduino IDE compatible
+- Examples included for reading AUD1_IN and outputting audio to AUD1_OUT
+- Placeholder for DSP or audio processing libraries (to be added in later iterations)
 
 ---
 
 ## Philosophy / Purpose
-Tone32 is designed to be **open for learning and experimentation**, while **protecting the commercial integrity** of the platform.  
-My goal is to create a community around building musical appliances without risking instant mass-produced clones undercutting the project.
+Tone32 is designed to be **open for learning and experimentation**, while **protecting the commercial integrity** of the platform.
 
 I encourage hobbyists, educators, and developers to:
+
 - Learn from the design
 - Modify it for personal or educational projects
-- Contribute firmware or examples
+- Contribute firmware examples
+
+This v0.1 is a **starting point**: it demonstrates audio-capable ESP32 hardware while leaving room for expansion in future versions.
 
 ---
 
@@ -67,25 +65,29 @@ I encourage hobbyists, educators, and developers to:
 - You may use, modify, and experiment with the design for personal, educational, or research purposes
 - Commercial use requires a paid license. Contact: ben@krvr.nl
 
+### Firmware / Software
+- MIT license (Arduino examples and code snippets)
+
 ---
 
 ## Quick Start / Examples
 1. Install Arduino IDE
 2. Add Tone32 board package (instructions TBD)
 3. Connect your Tone32 via USB-C
-4. Start hacking your own musical appliance!
+4. Use example sketches to read AUD1_IN or output audio via AUD1_OUT
 
 ---
 
 ## Community / Contribution
 - Fork the repo for experimentation
 - Submit firmware examples or fixes via pull requests
-- Share your mods for non-commercial projects
-- 
+- Share mods for **non-commercial projects**
+
 ---
 
 ## Branding & Attribution
-If you use Tone32 in a project, please credit the original hardware design:  
-“Hardware based on Tone32 https://github.com/benkrvr/Tone32 ”
+If you use Tone32 in a project, please credit the original hardware design:
 
-Do not use the Tone32 logo or name in any commercial product without permission.
+> “Hardware based on Tone32 https://github.com/benkrvr/Tone32 ”
+
+Do **not** use the Tone32 logo or name in any commercial product without permission.
